@@ -1,7 +1,5 @@
 /// <reference types="cypress"/>
 
-const { constant } = require("cypress/types/lodash")
-
 describe('Testing Tables',function()
 {
     it('Table Test',function()
