@@ -9,7 +9,7 @@
   "author": "Adina",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^7.5.0",
+    "cypress": "^7.6.0",
     "cypress-xpath": "^1.6.2"
   }
 }

@@ -26,19 +26,26 @@
 
 Cypress.Commands.add('login', (email, password) => { 
     cy.visit("https://admin-demo.nopcommerce.com/login") //Website
+    cy.location('protocol').should('eq','https:')
     cy.get("input[name=Email]").clear().type(email) //Email
     cy.get("input[name=Password]").clear().type(password) //Password
     cy.get("button[type=submit]").click() //SignIn
 })
 
-Cypress.Commands.add('Conduit_SignUp', (email, password) => {
-    cy.visit("https://react-redux.realworld.io/#/login?_k=kuud5i") //Website
-    cy.get("") //Email
-
+Cypress.Commands.add('Conduit_SignUp', (username, email, password) => {
+    cy.visit("https://react-redux.realworld.io/#/register?_k=ucbrpf") //Direct link to sing up Website
+    cy.title().should('eq', 'Conduit') //verify title
+    cy.location('protocol').should('eq','https:')
+    cy.get("input[type=text]").clear().type(username) //User name 
+    cy.get("input[type=email]").clear().type(email) //Email
+    cy.get("input[type=password]").clear().type(password) //password
+    cy.get(".btn").contains('Sign in').should('be.visible').click() //SignIn
 })
 
 Cypress.Commands.add('Conduit_SignIn', (email, password) => {
     cy.visit("https://react-redux.realworld.io/#/login?_k=kuud5i") //Website
-    cy.get("") //Email
-
+    cy.title().should('eq', 'Conduit') //verify title
+    cy.get("input[type=email]").clear().type(email) //Email
+    cy.get("input[type=password]").clear().type(password) //Password
+    cy.get("button[type=submit]").should('be.visible').click()//SignIn get(.btn).contains('Sign in')
 })
