@@ -2,7 +2,7 @@ describe('Sign Up/Sign In Test Suite',function()
 {
     it('Test Sign Up Page ',function(){
         
-        cy.Conduit_SignUp('ototo','oo@xx.co','12345678')//valid username email password
+        cy.Conduit_SignUp('drffsdfsdf','odscffo@xsoooox.co','12345678')//valid username email password
         cy.contains('Your Feed',{timeout:10000}).should('be.visible')
         cy.wait(3000)
         cy.Conduit_SignUp('Adiii','adoo@xx.com','12345678') //invalid email

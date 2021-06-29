@@ -43,9 +43,11 @@ Cypress.Commands.add('Conduit_SignUp', (username, email, password) => {
 })
 
 Cypress.Commands.add('Conduit_SignIn', (email, password) => {
+    cy.wait(2000)
     cy.visit("https://react-redux.realworld.io/#/login?_k=kuud5i") //Website
     cy.title().should('eq', 'Conduit') //verify title
     cy.get("input[type=email]").clear().type(email) //Email
     cy.get("input[type=password]").clear().type(password) //Password
+    cy.wait(2000)
     cy.get("button[type=submit]").should('be.visible').click()//SignIn get(.btn).contains('Sign in')
 })
